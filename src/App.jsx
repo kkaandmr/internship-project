@@ -8,6 +8,9 @@ function App() {
 
   return (
     <>
+    <div className="">
+      <DetailPage/>
+    </div>
     </>
   )
 }

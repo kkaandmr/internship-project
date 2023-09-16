@@ -41,13 +41,13 @@ const DetailPage = () => {
             <span className="value" id="tarih">2016</span>
           </div>
           <div className="text text-with-label">
-            <span className="name" style={{ fontSize: '15px', color: 'grey' }}>Dil</span>
+            <span className="name" style={{ fontSize: '15px', color: 'grey',marginRight:'10px'}}>Dil</span>
             <span className="value" style={{ fontSize: '15px', color: 'azure', marginRight: '20px' }}>
               Türkçe, İngilizce
             </span>
           </div>
           <div className="text text-with-label">
-            <span className="name" style={{ fontSize: '15px', color: 'grey' }}>Altyazı</span>
+            <span className="name" style={{ fontSize: '15px', color: 'grey',marginRight:'10px'}}>Altyazı</span>
             <span className="value" style={{ fontSize: '15px', color: 'azure', marginRight: '20px' }}>
               Türkçe, İngilizce
             </span>
@@ -57,15 +57,15 @@ const DetailPage = () => {
           <div className="text text-with-label" style={{ paddingLeft: '55px', marginTop: '10px' }}>
             <span className="name name1" style={{ fontSize: '15px', color: 'grey' }}>Yönetmen</span>
             <div className="vertical-list">
-              <span focusable="true" className="value" style={{ fontSize: '15px', color: 'azure' }}>Justin Kurzel</span>
+              <span focusable="true" className="value" style={{ fontSize: '15px', color: 'azure'}}>Justin Kurzel</span>
             </div>
           </div>
           <div className="text text-with-label" style={{ paddingLeft: '150px' }}>
-            <span className="name name1" id="oyuncu" style={{ fontSize: '15px', color: 'grey' }}>Oyuncular</span>
+            <span className="name name1" id="oyuncu" style={{ fontSize: '15px', color: 'grey',marginLeft:'10px'}}>Oyuncular</span>
             <div className="vertical-list">
-              <span className="value" id="oyuncu1" style={{ fontSize: '15px', color: 'azure' }}>Michael Fassbender</span>
-              <span className="value" id="oyuncu2" style={{ fontSize: '15px', color: 'azure' }}>Marion Cotillard</span>
-              <span className="value" id="oyuncu3" style={{ fontSize: '15px', color: 'azure' }}>Jeremy Irons</span>
+              <span className="value" id="oyuncu1" style={{ fontSize: '15px', color: 'azure',marginLeft:'10px'}}>Michael Fassbender</span>
+              <span className="value" id="oyuncu2" style={{ fontSize: '15px', color: 'azure',marginRight:'10px'}}>Marion Cotillard</span>
+              <span className="value" id="oyuncu3" style={{ fontSize: '15px', color: 'azure',marginRight:'10px' }}>Jeremy Irons</span>
             </div>
           </div>
         </div>
