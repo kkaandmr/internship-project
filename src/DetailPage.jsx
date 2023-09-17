@@ -80,7 +80,7 @@ const DetailPage = () => {
             <div focusable="true" className="btn primary btn-play" id="box"></div>
             <div>
               <div>
-                <img src="https://tv-static-cdn.tvplus.com.tr/bigscreen/smarttv/assets/icons/icons-v2/play.svg" id="box1" />
+                <img src="https://tv-static-cdn.tvplus.com.tr/bigscreen/smarttv/assets/icons/icons-v2/play.svg" id="box1" style={{marginRight:'10px'}} />
                 <span id="box2">Hemen İzle</span>
               </div>
             </div>
