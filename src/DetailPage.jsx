@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
 
 
 const DetailPage = () => {
