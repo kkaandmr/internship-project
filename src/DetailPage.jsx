@@ -82,7 +82,6 @@ const DetailPage = () => {
         <Date_v date={data?.Date} />
         <Language_v language={data?.Language} />
         <Subtitle_v subtitle={data?.Subtitle} />
-
         </div>
         <div className="row" focusable-group="true" list-type="HORIZANTAL" style={{ left: '0px' }}>
         <Director_v director={data?.Director} />
