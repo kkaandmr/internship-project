@@ -16,15 +16,15 @@ const DetailPage = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const apiKey = '91a39b3bf521ebd37d4af372928b74598e626bf66b78075654f883d2457fbbae20848d8dd2d80de5b0d072be291e3ecb73ef16ae3c19912d1223b2ecb3be12236ed7c71b6b2fe03e77bbce7c044d8d297842508cb35520f16f35232223417236fc988b7c654a8af5c86031067f42de1d7074bde45afea3259a0d5e84364757de';
-    const apiUrl = 'http://localhost:1337/api/details';
+  const apiKey = '91a39b3bf521ebd37d4af372928b74598e626bf66b78075654f883d2457fbbae20848d8dd2d80de5b0d072be291e3ecb73ef16ae3c19912d1223b2ecb3be12236ed7c71b6b2fe03e77bbce7c044d8d297842508cb35520f16f35232223417236fc988b7c654a8af5c86031067f42de1d7074bde45afea3259a0d5e84364757de';
+  const apiUrl = 'http://localhost:1337/api/details';
 
-    const headers = {
-      'Authorization': `Bearer ${apiKey}`,
-      'Content-Type': 'application/json'
-    };
+  const headers = {
+    'Authorization': `Bearer ${apiKey}`,
+    'Content-Type': 'application/json'
+  };
 
+  const disaricikar=()=>{
     fetch(apiUrl, {
       method: 'GET',
       headers: headers
@@ -59,6 +59,14 @@ const DetailPage = () => {
         console.error('Bir hata oluştu:', error);
         setLoading(false);
       });
+  }
+
+  useEffect(() => {
+    if(!data) {
+      disaricikar()
+    }
+
+    
   }, []);
   
   return (
