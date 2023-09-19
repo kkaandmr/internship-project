@@ -1,20 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
+import Title from './components/Title';
 
 
 const DetailPage = () => {
+  const [data, setData] = useState({})
+  // let data = {}
+  useEffect(() => {
+    setTimeout(() => {
+      setData({
+        name: "Assasin's Creed",
+        english: "Assasin's Creed"
+      })
+    }, 2500)
+     // fetch edilen json'u data'ya atadık,
+     // JSX'te döngüler ile RTUK ikonlarını halletme
+  }, [])
+  
   return (
     <div list-type="VERTICAL" focusable-group="true" className="outer" first-focus-index="1" style={{ top: '0px', backgroundColor: 'black', overflow: 'hidden' }}>
       <div className="details" style={{ zIndex: 2, position: 'relative' }}>
-        <div className="title-content">
-          <div className="text-title" id="title" style={{ fontSize: '35px', color: 'azure' }}>
-            <span>Assassin's Creed</span>
-          </div>
-        </div>
-        <div className="text-subtitle" id="subtitle" style={{ fontSize: '25px', color: '#FFFFFF99' }}>
-          Assassin's Creed
-        </div>
+        <Title name={data.name} english={data.english}/> 
+        {/* Buraya props olarak gönderdik */}
         <div className="row">
+          
           <div className="rtuk-item">
             <img src="https://tv-static-cdn.tvplus.com.tr/bigscreen/smarttv/assets/icons/rtuk-v3/VH.svg" alt="siddet" />
           </div>
