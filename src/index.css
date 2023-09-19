@@ -80,6 +80,17 @@
     max-width: 100vw;
     max-height: 100vh;
   }
+  #id2{
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1; 
+    max-width: 100vw;
+    max-height: 100vh;
+  }
   .rtuk-item{
     width: 20px;
     height: 20px;

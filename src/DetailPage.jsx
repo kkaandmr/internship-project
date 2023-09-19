@@ -129,7 +129,7 @@ const DetailPage = () => {
           </div>
         </div>
       </div>
-      <video autoPlay loop muted id="id1">
+      <video autoPlay  muted id="id1">
         <source src="images/trailer.mp4" type="video/mp4" />
       </video>
     </div>
