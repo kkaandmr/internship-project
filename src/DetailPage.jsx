@@ -28,8 +28,10 @@ const DetailPage = () => {
       })
       .then(apiData => {
         let data=apiData.data[0].attributes;
+	      let { Title, Text_Subtitle } = data;
 
-        console.log(apiData.data[0]);
+        console.log('API verisi:', data);
+
         setData({
           Title: data.Title,
           Text_Subtitle: data.Text_Subtitle,
@@ -48,7 +50,6 @@ const DetailPage = () => {
       <Title_v title={data?.Title} text_subtitle={data?.Text_Subtitle} />
         {/* Buraya props olarak gönderdik */}
         <div className="row">
-          
           <div className="rtuk-item">
             <img src="https://tv-static-cdn.tvplus.com.tr/bigscreen/smarttv/assets/icons/rtuk-v3/VH.svg" alt="siddet" />
           </div>
