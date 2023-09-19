@@ -1,16 +1,14 @@
 import React from 'react';
-const Genre_v = ({genre}) => {
+const Date_v = ({date}) => {
 
     return (
       <div>
         <div className="text text-with-label">
             <span className="name"></span>
-            <span className="value" id="tur" style={{ display: 'inline-flex' }}>
-                {genre}
-            </span>
+            <span className="value" id="tarih">{date}</span>
         </div>
       </div>
     );
   }
 
-export default Genre_v;
+export default Date_v;
