@@ -9,6 +9,7 @@ import Subtitle_v from './components/Subtitle_v';
 import Actor_v from './components/Actor_v';
 import Director_v from './components/Director_v';
 import Summary_v from './components/Summary_v';
+import Trailer_v from './components/Trailer_v';
 
 
 
@@ -40,7 +41,6 @@ const DetailPage = () => {
 	      let { Title, Text_Subtitle } = data;
 
         console.log('API verisi:', data);
-
         setData({
           Title: data.Title,
           Text_Subtitle: data.Text_Subtitle,
@@ -51,8 +51,10 @@ const DetailPage = () => {
           Subtitle:data.Subtitle,
           Director: data.Director,
           Actor: data.Actor,
-          Summary: data.Summary
+          Summary: data.Summary,
+          Trailer:data.Trailer
         });
+        
         setLoading(false);
       })
       .catch(error => {
@@ -130,7 +132,7 @@ const DetailPage = () => {
         </div>
       </div>
       <video autoPlay  muted id="id1">
-        <source src="images/trailer.mp4" type="video/mp4" />
+      <source src="images/trailer.mp4" type="video/mp4"/>
       </video>
     </div>
   );
