@@ -16,9 +16,7 @@ import Trailer_v from './components/Trailer_v';
 const DetailPage = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [timeout, setTimeout] = useState(null);
-  const videoRef = useRef(null);
-  const [showImage, setShowImage] = useState(true);
+  const [videoTimeout, setVideoTimeout] = useState(false);
 
   const apiKey = '91a39b3bf521ebd37d4af372928b74598e626bf66b78075654f883d2457fbbae20848d8dd2d80de5b0d072be291e3ecb73ef16ae3c19912d1223b2ecb3be12236ed7c71b6b2fe03e77bbce7c044d8d297842508cb35520f16f35232223417236fc988b7c654a8af5c86031067f42de1d7074bde45afea3259a0d5e84364757de';
   const apiUrl = 'http://localhost:1337/api/details';
@@ -60,12 +58,10 @@ const DetailPage = () => {
         
         setLoading(false);
         setTimeout(() => {
-          setShowImage(false);
-          if (videoRef.current) {
-            videoRef.current.play();
-          }
+          setVideoTimeout(true);
         }, 5000);
       })
+
       .catch(error => {
         console.error('Bir hata oluştu:', error);
         setLoading(false);
@@ -81,9 +77,6 @@ const DetailPage = () => {
   return (
     <div list-type="VERTICAL" focusable-group="true" className="outer" first-focus-index="1" style={{ top: '0px', backgroundColor: 'black', overflow: 'hidden' }}>
       <div className="details" style={{ zIndex: 2, position: 'relative' }}>
-      {showImage && (
-          <img src="images/poster.jpg" alt="Poster" />
-        )}
       <Title_v title={data?.Title} text_subtitle={data?.Text_Subtitle} />
         <div className="row">
           <div className="rtuk-item">
@@ -141,9 +134,11 @@ const DetailPage = () => {
           </div>
         </div>
       </div>
-      <video ref={videoRef} autoPlay muted id="id1">
-      <source src="images/trailer.mp4" type="video/mp4"/>
-      </video>
+      {videoTimeout && ( // Render video when the timeout is reached
+              <video autoPlay muted id="id1">
+                <source src="images/trailer.mp4" type="video/mp4" />
+              </video>
+            )}
     </div>
   );
 };
