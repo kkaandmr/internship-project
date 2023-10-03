@@ -38,7 +38,7 @@ const DetailPage = () => {
         return response.json();
       })
       .then(apiData => {
-        let data=apiData.data[1].attributes;
+        let data=apiData.data[3].attributes;
 	      let { Title, Text_Subtitle } = data;
 
         console.log('API verisi:', data);
@@ -59,7 +59,7 @@ const DetailPage = () => {
         setLoading(false);
         setTimeout(() => {
           setVideoTimeout(true);
-        }, 5000);
+        }, 3000);
       })
 
       .catch(error => {
@@ -138,10 +138,10 @@ const DetailPage = () => {
       </div>
       {videoTimeout ? (
               <video autoPlay muted id="id1" poster="poster.jpg" onEnded={handleVideoEnded}>
-                <source src="images/squad.mp4" type="video/mp4" />
+                <source src="images/pokemon.mp4" type="video/mp4" />
               </video>
             ) : (
-              <img id='poster' src="images/poster-squad.jpg" alt="Poster"/>
+              <img id='poster' src="images/poster-pokemon.jpg" alt="Poster"/>
             )}
     </div>
   );
