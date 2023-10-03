@@ -38,7 +38,7 @@ const DetailPage = () => {
         return response.json();
       })
       .then(apiData => {
-        let data=apiData.data[0].attributes;
+        let data=apiData.data[1].attributes;
 	      let { Title, Text_Subtitle } = data;
 
         console.log('API verisi:', data);
@@ -72,7 +72,9 @@ const DetailPage = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  
+  const handleVideoEnded = () => {
+    setVideoTimeout(false);
+  };
   
   return (
     <div list-type="VERTICAL" focusable-group="true" className="outer" first-focus-index="1" style={{ top: '0px', backgroundColor: 'black', overflow: 'hidden' }}>
@@ -134,10 +136,12 @@ const DetailPage = () => {
           </div>
         </div>
       </div>
-      {videoTimeout && ( // Render video when the timeout is reached
-              <video autoPlay muted id="id1">
-                <source src="images/trailer.mp4" type="video/mp4" />
+      {videoTimeout ? (
+              <video autoPlay muted id="id1" poster="poster.jpg" onEnded={handleVideoEnded}>
+                <source src="images/squad.mp4" type="video/mp4" />
               </video>
+            ) : (
+              <img id='poster' src="images/poster-squad.jpg" alt="Poster"/>
             )}
     </div>
   );
